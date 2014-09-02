@@ -86,7 +86,8 @@ object TwitterPopularTags {
     // Save tweets in csv format
     topCounts10.foreachRDD(rdd => {
       val name = Random.nextInt
-      val topList = rdd.saveAsTextFile("/mnt/sparkOut/out"+name)
+      // val topList = rdd.map(s => s.toString().replace("(","").replace(")","")).saveAsTextFile("/mnt/sparkOut/out"+name)
+      val topList = rdd.map(s => s.toString().replace("(","").replace(")","")).saveAsTextFile("hdfs://ip-xx-xx-xxx-xx.ec2.internal:<port>/spark/out"+name)
       rdd.map(s => s.toString().replace("(","").replace(")","")).foreach(println)
     })
 
