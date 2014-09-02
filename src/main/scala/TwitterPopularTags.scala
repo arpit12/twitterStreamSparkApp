@@ -55,19 +55,27 @@ object TwitterPopularTags {
 
 
     // Print popular hashtags
-    topCounts60.foreachRDD(rdd => {
+    /*topCounts60.foreachRDD(rdd => {
 	val name = Random.nextInt
       val topList = rdd.saveAsTextFile("/home/arpit/SparkTwitterAnalysis/output-"+name)
       println("\nPopular topics in last 60 seconds (%s total):".format(rdd.count()))
       rdd.take(5).foreach{case (count, tag) => println("%s (%s tweets)".format(tag, count))}
-    })
+    })*/
 
-    topCounts10.foreachRDD(rdd => {
+    /*topCounts10.foreachRDD(rdd => {
 	val name = Random.nextInt
       val topList = rdd.saveAsTextFile("/home/arpit/SparkTwitterAnalysis/output-"+name)
       println("\nPopular topics in last 10 seconds (%s total):".format(rdd.count()))
       rdd.take(5).foreach{case (count, tag) => println("%s (%s tweets)".format(tag, count))}
+    })*/
+
+    // Save tweets in csv format
+    topCounts10.foreachRDD(rdd => {
+      val name = Random.nextInt
+      val topList = rdd.saveAsTextFile("/mnt/sparkOut/out"+name)
+      rdd.map(s => s.toString().replace("(","").replace(")","")).foreach(println)
     })
+
 
     ssc.start()
     ssc.awaitTermination()
