@@ -7,7 +7,7 @@ A standalone application using the Spark API in Scala. The application uses Simp
 
 >sbt/sbt package 
 
->sbt/sbt 'run <arguments>'
+>sbt/sbt 'run \<arguments\>'
 
 Example : 
 
