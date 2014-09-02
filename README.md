@@ -11,4 +11,4 @@ A standalone application using the Spark API in Scala. The application uses Simp
 
 Example : 
 
-sbt/sbt 'run local[4] <consumer-key> <consumerSecret-key> <accessToken> <accessTokenSecret> india'
+sbt/sbt 'run local[4] /<consumer-key/> /<consumerSecret-key/> /<accessToken/> /<accessTokenSecret/> india'
