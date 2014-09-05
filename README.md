@@ -14,4 +14,4 @@ Example :
 sbt\sbt 'run local[4] \<consumer-key\> \<consumerSecret-key\> \<accessToken\> \<accessTokenSecret\> india'
 
 
-To run other app just put multiple scala files with "main" and while doing "sbt/sbt run" it will ask which class to run.
+To run other app just put multiple scala files with "main" and while doing "sbt/sbt run" it will ask which class to run. Then select the number from there.
